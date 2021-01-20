@@ -1,0 +1,69 @@
+1)
+SELECT actor_id, first_name, last_name FROM actor;
+
+2)
+SELECT first_name, last_name FROM actor WHERE first_name='JOHN';
+
+3)
+SELECT first_name, last_name FROM actor WHERE last_name='NEESON';
+
+4)
+SELECT actor_id, first_name, last_name FROM actor WHERE actor_id % 10= 0;
+
+5)
+SELECT description FROM film WHERE film_id = 100;
+
+6)
+SELECT * FROM film WHERE rating = 'R';
+
+7)
+SELECT * FROM film WHERE rating != 'R';
+
+8)
+SELECT * FROM film ORDER BY length ASC LIMIT 10;
+
+9)
+SELECT * FROM film ORDER BY length DESC;
+
+10)
+SELECT * FROM film WHERE special_features LIKE '%Deleted Scenes%';
+
+11)
+
+12)
+
+13)
+SELECT FA.actor_id, A.first_name, A.last_name, COUNT(FA.actor_id) as Freq FROM film_actor FA JOIN actor A ON FA.actor_id=A.actor_id GROUP BY actor_id ORDER BY Freq DESC LIMIT 1;
+
+14)
+
+15)
+SELECT AVG(length) FROM film;
+
+16)
+
+17)
+
+18)
+SELECT * FROM film WHERE release_year = 2010;
+
+19)
+SELECT F.title, C.name FROM film_category FC JOIN film F ON FC.film_id=F.film_id JOIN category C ON FC.category_id=C.category_id WHERE C.name='Horror';
+
+20)
+SELECT first_name, last_name FROM staff WHERE staff_id=2;
+
+21)
+SELECT F.title FROM film_actor FA JOIN film F ON FA.film_id=F.film_id JOIN actor A ON FA.actor_id=A.actor_id WHERE A.first_name='FRED' AND A.last_name='COSTNER';
+
+22)
+SELECT DISTINCT country FROM country;
+
+23)
+SELECT name FROM language ORDER BY name ASC;
+
+24)
+SELECT first_name, last_name FROM actor WHERE last_name LIKE '%SON' ORDER BY first_name DESC;
+
+25)
+SELECT C.name, COUNT(FC.category_id) as count FROM film_category FC JOIN category C ON FC.category_id=C.category_id GROUP BY FC.category_id ORDER BY count DESC LIMIT 1;
